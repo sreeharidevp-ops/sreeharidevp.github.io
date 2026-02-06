@@ -19,10 +19,10 @@
     <meta property="og:description" content="Common questions about generator solutions in UAE answered by experts.">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.najmamohammed.ae/faq">
+    <link rel="canonical" href="https://www.najmapower.com/faq">
     
     <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,487 +32,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <style>
-        :root {
-            --yellow-primary: #FFC107;
-            --yellow-dark: #D49F00;
-            --light-bg: #FFFFFF;
-            --light-secondary: #F5F5F5;
-            --light-tertiary: #E0E0E0;
-            --text-dark: #1A1A1A;
-            --text-gray: #555555;
-            --steel-gray: #455A64;
-            --accent-blue: #1976D2;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Work Sans', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--light-bg);
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .display-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            letter-spacing: 2px;
-            line-height: 1.1;
-        }
-        
-        .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            letter-spacing: 1.5px;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .animate-on-scroll {
-            opacity: 0;
-        }
-        
-        .animate-on-scroll.animated {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        /* Navbar */
-        .navbar {
-            background: #FFFFFF;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar.scrolled {
-            background: #FFFFFF;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .navbar-brand {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            color: var(--text-dark) !important;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-brand i {
-            color: var(--yellow-primary);
-        }
-        
-        .navbar-brand:hover {
-            transform: scale(1.05);
-            color: var(--yellow-dark) !important;
-        }
-        
-        .navbar-toggler {
-            border-color: var(--text-dark);
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-        
-        .nav-link {
-            color: var(--text-dark) !important;
-            font-weight: 500;
-            position: relative;
-            transition: color 0.3s ease;
-            padding: 0.5rem 1rem !important;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--yellow-primary);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 80%;
-        }
-        
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--yellow-primary) !important;
-        }
-        
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.92) 100%);
-            padding: 10rem 0 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 10px,
-                    rgba(255, 193, 7, 0.03) 10px,
-                    rgba(255, 193, 7, 0.03) 20px
-                );
-            pointer-events: none;
-        }
-        
-        .page-header-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .breadcrumb {
-            background: transparent;
-            padding: 0;
-            margin-bottom: 1rem;
-        }
-        
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: "›";
-            color: var(--yellow-primary);
-            font-size: 1.2rem;
-        }
-        
-        .breadcrumb-item a {
-            color: var(--text-gray);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .breadcrumb-item a:hover {
-            color: var(--yellow-primary);
-        }
-        
-        .breadcrumb-item.active {
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-        
-        /* FAQ Categories */
-        .faq-categories {
-            background: var(--light-bg);
-            padding: 3rem 0;
-        }
-        
-        .category-btn {
-            background: #FFFFFF;
-            border: 2px solid var(--light-tertiary);
-            color: var(--text-dark);
-            padding: 1rem 2rem;
-            margin: 0.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .category-btn:hover,
-        .category-btn.active {
-            background: var(--yellow-primary);
-            border-color: var(--yellow-primary);
-            color: var(--text-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
-        }
-        
-        /* FAQ Section */
-        .faq-section {
-            padding: 6rem 0;
-            background: var(--light-secondary);
-        }
-        
-        .faq-category-section {
-            margin-bottom: 4rem;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        
-        .faq-category-section[style*="display: none"] {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        .category-header {
-            background: var(--yellow-primary);
-            padding: 1.5rem 2rem;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .category-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--text-dark);
-            color: var(--yellow-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-right: 1.5rem;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-        
-        .category-header h3 {
-            margin: 0;
-            color: var(--text-dark);
-            font-size: 2rem;
-        }
-        
-        /* Accordion Styles */
-        .accordion-item {
-            background: #FFFFFF;
-            border: none;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-        }
-        
-        .accordion-button {
-            background: #FFFFFF;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 1.5rem 2rem;
-            border: none;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .accordion-button:not(.collapsed) {
-            background: var(--yellow-primary);
-            color: var(--text-dark);
-            box-shadow: none;
-        }
-        
-        .accordion-button:hover {
-            background: var(--light-secondary);
-        }
-        
-        .accordion-button:not(.collapsed):hover {
-            background: var(--yellow-dark);
-            color: #fff;
-        }
-        
-        .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231A1A1A'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-        
-        .accordion-button:not(.collapsed)::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231A1A1A'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-        
-        .accordion-body {
-            padding: 2rem;
-            color: var(--text-gray);
-            line-height: 1.8;
-            font-size: 1.05rem;
-            border-top: 2px solid var(--light-tertiary);
-        }
-        
-        .accordion-body strong {
-            color: var(--text-dark);
-        }
-        
-        .accordion-body ul {
-            margin-top: 1rem;
-            padding-left: 1.5rem;
-        }
-        
-        .accordion-body ul li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* CTA Section */
-        .cta-faq-section {
-            background: var(--light-bg);
-            padding: 5rem 0;
-            text-align: center;
-        }
-        
-        .cta-card {
-            background: var(--light-secondary);
-            padding: 3rem;
-            border-top: 4px solid var(--yellow-primary);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .btn-cta {
-            background: var(--yellow-primary);
-            color: var(--text-dark);
-            border: none;
-            padding: 1rem 2.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.4s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin: 0.5rem;
-        }
-        
-        .btn-cta:hover {
-            background: var(--yellow-dark);
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--text-dark);
-            padding: 3rem 0 1.5rem;
-            border-top: 3px solid var(--yellow-primary);
-        }
-        
-        .footer h5 {
-            color: var(--yellow-primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-        
-        .footer a {
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer a:hover {
-            color: var(--yellow-primary);
-            transform: translateX(5px);
-        }
-        
-        .footer p,
-        .footer address {
-            color: #FFFFFF;
-        }
-        
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            background: #333;
-            color: var(--yellow-primary);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 0.5rem;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--yellow-primary);
-            color: var(--text-dark);
-            transform: translateY(-3px);
-        }
-        
-        /* Buttons */
-        .scroll-top, .whatsapp-btn {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            border-radius: 50%;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .scroll-top {
-            bottom: 110px;
-            right: 30px;
-            background: var(--yellow-primary);
-            color: var(--text-dark);
-        }
-        
-        .whatsapp-btn {
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: #FFFFFF;
-        }
-        
-        .scroll-top:hover, .whatsapp-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .scroll-top.active, .whatsapp-btn.active {
-            display: flex;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .page-header {
-                padding: 8rem 0 3rem;
-            }
-            
-            .faq-section,
-            .cta-faq-section {
-                padding: 4rem 0;
-            }
-            
-            .category-btn {
-                width: 100%;
-                margin: 0.5rem 0;
-            }
-            
-            .category-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .category-icon {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
+	<link rel="stylesheet" href="css/faqs.css">
+	<!-- Cusrom style -->
+    <link rel="stylesheet" href="css/custom-styles.css">
 </head>
 <body>
     
@@ -540,7 +62,7 @@
                         <a class="nav-link active" href="faq.html" aria-label="Navigate to FAQ page">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html" aria-label="Navigate to contact page">Contact</a>
+                        <a class="nav-link" href="contact.html" aria-label="Navigate to contact page">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -985,7 +507,7 @@
                             <div class="accordion-body">
                                 For repair quotes, contact us through:
                                 <ul>
-                                    <li>Phone: +971 XX XXX XXXX (24/7 support line)</li>
+                                    <li>Phone: +971 50 546 5211 (24/7 support line)</li>
                                     <li>Email: info@najmamohammed.ae</li>
                                     <li>WhatsApp: Direct message via our website button</li>
                                 </ul>
@@ -1011,7 +533,7 @@
                     <a href="contact.html" class="btn-cta">
                         <i class="fas fa-envelope me-2"></i>CONTACT US
                     </a>
-                    <a href="tel:+971XXXXXXXXX" class="btn-cta">
+                    <a href="tel:++971 50 546 5211" class="btn-cta">
                         <i class="fas fa-phone me-2"></i>CALL NOW
                     </a>
                 </div>
@@ -1063,11 +585,11 @@
                         </p>
                         <p class="mb-2 d-flex">
                             <i class="fas fa-phone me-2 text-warning" aria-hidden="true"></i>
-                            <a href="tel:+971XXXXXXXXX" class="text-light text-decoration-none">+971 XX XXX XXXX</a>
+                            <a href="tel:++971 50 546 5211" class="text-light text-decoration-none">+971 50 546 5211</a>
                         </p>
                         <p class="mb-2 d-flex">
                             <i class="fas fa-envelope me-2 text-warning" aria-hidden="true"></i>
-                            <a href="mailto:service@najmapoert.com" class="text-light text-decoration-none">service@najmapoert.com</a>
+                            <a href="mailto:service@najmapower.com" class="text-light text-decoration-none">service@najmapower.com</a>
                         </p>
                     </address>
                 </div>
@@ -1088,7 +610,7 @@
     </button>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/971XXXXXXXXX?text=Hello%20Najma%20Mohammed,%20I%20would%20like%20to%20inquire%20about%20generator%20services" 
+    <a href="https://wa.me/+971505465211?text=Hello%20Najma%20Mohammed,%20I%20would%20like%20to%20inquire%20about%20generator%20services" 
        class="whatsapp-btn active" 
        target="_blank" 
        rel="noopener noreferrer"
