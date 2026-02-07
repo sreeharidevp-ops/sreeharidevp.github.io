@@ -1,2 +1,13 @@
 .fa-whatsapp {color: white;}
 .whatsapp-btn {color: #25D366;}
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 10rem 0 3rem;
+    }
+	.navbar.navbar-expand-lg .navbar-brand img {
+		width: 180px;
+	}
+	footer img.mb-1 {
+		width: 180px;
+	}
+}
