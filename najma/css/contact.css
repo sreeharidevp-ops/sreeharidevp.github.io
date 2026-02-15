@@ -485,6 +485,62 @@ textarea.form-control {
 	display: flex;
 }
 
+
+
+.contact-form-wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px; /* match your card style if used */
+}
+
+.google-form-frame {
+    width: 100%;
+    min-height: 1100px;
+    border: none;
+    background: transparent;
+}
+.contact-card {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-top: 6px solid #ffc107; /* your yellow accent */
+    max-width: 900px;
+    margin: auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-header h2 {
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    color: #666;
+    margin: 0;
+}
+
+.google-form-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.google-form {
+    width: 100%;
+    min-height: 1200px;
+    border: none;
+    background: transparent;
+}
+.m7w29c {
+  display: none !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
 	.page-header {
@@ -502,6 +558,6 @@ textarea.form-control {
 	}
 	
 	.map-container {
-		height: 300px;
+		height: unset;
 	}
 }
