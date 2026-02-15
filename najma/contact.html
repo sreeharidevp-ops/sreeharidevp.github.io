@@ -130,35 +130,86 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="form-card animate-on-scroll">
-                        <div class="text-center mb-4">
+				
+				
+				<div class="contact-card">
+    
+    <div class="contact-header">
+        <h2>SEND US A MESSAGE</h2>
+        <p>Fill out the form below and we'll get back to you within 24 hours</p>
+    </div>
+<form id="contactForm">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="firstName" class="form-label">First Name *</label>
+            <input type="text" class="form-control" id="firstName" name="entry.1395775409" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="entry.1356186173">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="email" class="form-label">Email *</label>
+            <input type="email" class="form-control" id="email" name="entry.1396960917" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="entry.160390028">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="serviceType" class="form-label">Service Required *</label>
+        <select class="form-select" id="serviceType" name="entry.1416417819" required>
+            <option value="">Select a service...</option>
+            <option value="Generator Sales">Generator Sales</option>
+            <option value="Generator Rental">Generator Rental</option>
+            <option value="Service & Maintenance">Service & Maintenance</option>
+            <option value="Repair & Technical Support">Repair & Technical Support</option>
+            <option value="Emergency Support">Emergency Support</option>
+            <option value="Contracting Services">Contracting Services</option>
+            <option value="__other_option__">Other</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="company" class="form-label">Company Name (Optional)</label>
+        <input type="text" class="form-control" id="company" name="entry.105597506">
+    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label">Message *</label>
+        <textarea class="form-control" id="message" name="entry.421345695" rows="5" required placeholder="Please describe your requirements..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-submit">
+        <i class="fas fa-paper-plane me-2"></i>SEND MESSAGE
+    </button>
+</form>
+
+<!-- Hidden iframe to prevent redirect -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { onFormSubmitSuccess(); }"></iframe>
+
+</div>
+
+				
+				
+				
+				
+				
+                   <!-- <div class="form-card contact-card animate-on-scroll">
+                        <div class="text-center contact-header mb-4">
                             <h2 class="section-title">SEND US A MESSAGE</h2>
                             <p class="text-gray">Fill out the form below and we'll get back to you within 24 hours</p>
                         </div>
-                        <form id="contactForm" action="https://formspree.io/f/mzbwbnwa" method="POST" />
-                            <div class="row">
-                                <div class="col-md-12 mb-3">
-                                    <label for="firstName" class="form-label">First Name *</label>
-                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 mb-3">
-                                    <label for="email" class="form-label">Email *</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="company" class="form-label">Subject</label>
-								<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message *</label>
-								<textarea type="text" class="form-control" name="message" placeholder="Please describe your requirements..." rows="6" required></textarea>
-                            </div>
-							<button type="submit" class="download btn btn-submit" name="submit"><i class="fas fa-paper-plane me-2"></i> SEND MESSAGE</button>
-                        </form>
-                    </div>
+                        <div class="google-form-wrapper">
+							<iframe 
+								src="https://docs.google.com/forms/d/e/1FAIpQLScdNAvjNpsXNEFKJmhlzTbRCKdhCy0BkpdzWM6CkpwN7NlHZg/viewform?embedded=true"
+								class="google-form-frame"
+								loading="lazy">
+								Loading…
+							</iframe>
+						</div>
+
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -168,7 +219,8 @@
     <section class="map-section">
         <div class="map-container">
             <div class="map-placeholder">
-                <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d901.9994749532244!2d55.323827801876774!3d25.27065608961086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d0065b900df%3A0xd93dd212196bc9b0!2sAG%20House!5e0!3m2!1sen!2sin!4v1770435015864!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                <p>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225.49932129124252!2d55.33285044199206!3d25.270950740945192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d0fb8cace81%3A0x2ec8384cd96e00d0!2sNajma%20Mohammed!5e0!3m2!1sen!2sin!4v1770702101381!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
             </div>
         </div>
     </section>
@@ -340,22 +392,63 @@
             observer.observe(element);
         });
 
-        // Contact Form Handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would typically send the data to your server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! We will get back to you within 24 hours.');
-            
-            // Reset form
-            this.reset();
-        });
     </script>
+<script>
+let submitted = false;
 
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>SENDING...';
+    submitBtn.disabled = true;
+    
+    // Create a hidden form to submit to Google
+    const googleFormUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLScdNAvjNpsXNEFKJmhlzTbRCKdhCy0BkpdzWM6CkpwN7NlHZg/formResponse';
+    const formData = new FormData(this);
+    
+    // Submit via hidden iframe
+    const iframe = document.getElementById('hidden_iframe');
+    const form = document.createElement('form');
+    form.action = googleFormUrl;
+    form.method = 'POST';
+    form.target = 'hidden_iframe';
+    
+    // Add all form data to the hidden form
+    for (let [key, value] of formData.entries()) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
+    }
+    
+    document.body.appendChild(form);
+    submitted = true;
+    form.submit();
+    
+    // Clean up
+    setTimeout(() => {
+        document.body.removeChild(form);
+    }, 1000);
+});
+
+function onFormSubmitSuccess() {
+    if (submitted) {
+        const form = document.getElementById('contactForm');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        // Show success message
+        alert('✅ Thank you! Your message has been sent successfully.\nWe will get back to you within 24 hours.');
+        
+        // Reset form
+        form.reset();
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>SEND MESSAGE';
+        submitBtn.disabled = false;
+        submitted = false;
+    }
+}
+</script>
 </body>
 </html>
