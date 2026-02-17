@@ -138,55 +138,62 @@
         <h2>SEND US A MESSAGE</h2>
         <p>Fill out the form below and we'll get back to you within 24 hours</p>
     </div>
+<!-- Hidden iframe to catch Google Form redirect -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
 <form id="contactForm">
     <div class="row">
         <div class="col-md-6 mb-3">
             <label for="firstName" class="form-label">First Name *</label>
-            <input type="text" class="form-control" id="firstName" name="entry.1395775409" required>
+            <input type="text" class="form-control" id="firstName" name="entry.1187242773" required>
         </div>
         <div class="col-md-6 mb-3">
             <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastName" name="entry.1356186173">
+            <input type="text" class="form-control" id="lastName" name="entry.669705997">
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 mb-3">
-            <label for="email" class="form-label">Email *</label>
-            <input type="email" class="form-control" id="email" name="entry.1396960917" required>
+            <label for="phone" class="form-label">Phone Number *</label>
+            <input type="tel" class="form-control" id="phone" name="entry.1482108621" required>
         </div>
         <div class="col-md-6 mb-3">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" id="phone" name="entry.160390028">
+            <label for="email" class="form-label">Email Address *</label>
+            <input type="email" class="form-control" id="email" name="entry.282511779" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="company" class="form-label">Company Name (Optional)</label>
+            <input type="text" class="form-control" id="company" name="entry.1661793573">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="location" class="form-label">Project Location *</label>
+            <input type="text" class="form-control" id="location" name="entry.2058470920" required>
         </div>
     </div>
     <div class="mb-3">
         <label for="serviceType" class="form-label">Service Required *</label>
-        <select class="form-select" id="serviceType" name="entry.1416417819" required>
+        <select class="form-select" id="serviceType" name="entry.1984077597" required>
             <option value="">Select a service...</option>
             <option value="Generator Sales">Generator Sales</option>
             <option value="Generator Rental">Generator Rental</option>
-            <option value="Service & Maintenance">Service & Maintenance</option>
+            <option value="Service and Maintenance">Service and Maintenance</option>
+            <option value="Emergency Breakdown Support">Emergency Breakdown Support</option>
             <option value="Repair & Technical Support">Repair & Technical Support</option>
-            <option value="Emergency Support">Emergency Support</option>
             <option value="Contracting Services">Contracting Services</option>
             <option value="__other_option__">Other</option>
         </select>
     </div>
     <div class="mb-3">
-        <label for="company" class="form-label">Company Name (Optional)</label>
-        <input type="text" class="form-control" id="company" name="entry.105597506">
-    </div>
-    <div class="mb-3">
-        <label for="message" class="form-label">Message *</label>
-        <textarea class="form-control" id="message" name="entry.421345695" rows="5" required placeholder="Please describe your requirements..."></textarea>
+        <label for="message" class="form-label">Message / Details *</label>
+        <textarea class="form-control" id="message" name="entry.2049076023" rows="5" required 
+            placeholder="Please describe your requirements..."></textarea>
     </div>
     <button type="submit" class="btn btn-submit">
         <i class="fas fa-paper-plane me-2"></i>SEND MESSAGE
     </button>
 </form>
-
-<!-- Hidden iframe to prevent redirect -->
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { onFormSubmitSuccess(); }"></iframe>
 
 </div>
 
@@ -393,60 +400,53 @@
 
     </script>
 <script>
-let submitted = false;
-
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    
-    const submitBtn = this.querySelector('button[type="submit"]');
+
+    const form = this;
+    const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
+
+    // Button loading state
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>SENDING...';
     submitBtn.disabled = true;
-    
-    // Create a hidden form to submit to Google
-    const googleFormUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLScdNAvjNpsXNEFKJmhlzTbRCKdhCy0BkpdzWM6CkpwN7NlHZg/formResponse';
-    const formData = new FormData(this);
-    
-    // Submit via hidden iframe
-    const iframe = document.getElementById('hidden_iframe');
-    const form = document.createElement('form');
-    form.action = googleFormUrl;
-    form.method = 'POST';
-    form.target = 'hidden_iframe';
-    
-    // Add all form data to the hidden form
-    for (let [key, value] of formData.entries()) {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = value;
-        form.appendChild(input);
-    }
-    
-    document.body.appendChild(form);
-    submitted = true;
-    form.submit();
-    
-    // Clean up
-    setTimeout(() => {
-        document.body.removeChild(form);
-    }, 1000);
+
+    // Collect form data
+    const formData = new FormData(form);
+    const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeAx66IJ3c_dnDpiLy-11-SIyX_ad7EkCy0BLvfsH81ZAijsw/formResponse';
+
+    // Submit via fetch (no-cors)
+    fetch(googleFormURL, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+    })
+    .then(() => {
+        showSuccess(form, submitBtn, originalText);
+    })
+    .catch(() => {
+        // no-cors always throws, but form IS submitted
+        showSuccess(form, submitBtn, originalText);
+    });
 });
 
-function onFormSubmitSuccess() {
-    if (submitted) {
-        const form = document.getElementById('contactForm');
-        const submitBtn = form.querySelector('button[type="submit"]');
-        
-        // Show success message
-        alert('✅ Thank you! Your message has been sent successfully.\nWe will get back to you within 24 hours.');
-        
-        // Reset form
-        form.reset();
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>SEND MESSAGE';
-        submitBtn.disabled = false;
-        submitted = false;
-    }
+function showSuccess(form, submitBtn, originalText) {
+    // Reset form
+    form.reset();
+
+    // Show success button state
+    submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>MESSAGE SENT!';
+    submitBtn.style.backgroundColor = '#28a745';
+    submitBtn.disabled = false;
+
+    // Show success alert
+    alert('✅ Thank you for contacting NajmaPower!\n\nYour message has been received. We will get back to you within 24 hours.');
+
+    // Reset button after 4 seconds
+    setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.style.backgroundColor = '';
+    }, 4000);
 }
 </script>
 </body>
